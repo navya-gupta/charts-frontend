@@ -68,9 +68,32 @@ const FormButton = ({ type = "submit", onClick, children, className = "" }) => {
 const FormContainer = ({ title, children }) => {
     return (
         <div className="w-full max-w-lg bg-white bg-opacity-95 rounded-lg shadow-lg">
-            <div className="text-white px-4 py-3 rounded-t-lg" style={{ background: '#54058c' }}>
+            <div
+                className="text-white px-4 py-3 rounded-t-lg flex justify-between items-center"
+                style={{ background: '#54058c' }}
+            >
                 <h3 className="text-lg font-normal leading-tight">{title}</h3>
+                <div className="flex space-x-4">
+                    <a
+                        href="Template.csv"
+                        download
+                        className="text-sm hover:underline"
+                        style={{ color: 'rgba(255,255,255,0.9)' }}
+                    >
+                        Download CSV Template
+                    </a>
+                    <a
+                        href="/Software%20Manual.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm hover:underline"
+                        style={{ color: 'rgba(255,255,255,0.9)' }}
+                    >
+                        View Manual
+                    </a>
+                </div>
             </div>
+
             {children}
         </div>
     );
@@ -82,8 +105,9 @@ const Home = () => {
         fullName: '',
         university: '',
         department: '',
-        machineUsed: '',
-        modelNumber: '',
+        // machineUsed: '',
+        // modelNumber: '',
+        makeAndModelOfMachine: '',
         emailAddress: ''
     });
 
@@ -155,7 +179,7 @@ const Home = () => {
                             required={true}
                         />
 
-                        <FormInput
+                        {/* <FormInput
                             id="machineUsed"
                             label="Machine Used"
                             name="machineUsed"
@@ -171,6 +195,15 @@ const Home = () => {
                             value={formData.modelNumber}
                             onChange={handleChange}
                             required={true}
+                        /> */}
+
+                        <FormInput
+                            id="makeAndModelOfMachine"
+                            label="Make & Model of the Machine"
+                            name="makeAndModelOfMachine"
+                            value={formData.makeAndModelOfMachine}
+                            onChange={handleChange}
+                            required={true}
                         />
                     </div>
 
@@ -180,6 +213,7 @@ const Home = () => {
                         </FormButton>
                     </div>
                 </form>
+
             </FormContainer>
         </div>
     );

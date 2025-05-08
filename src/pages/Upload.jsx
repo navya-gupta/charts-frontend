@@ -15,8 +15,9 @@ const Upload = () => {
         fullName: '',
         university: '',
         department: '',
-        machineUsed: '',
-        modelNumber: '',
+        // machineUsed: '',
+        // modelNumber: '',
+        makeAndModelOfMachine: '',
         emailAddress: ''
     };
 
@@ -33,8 +34,9 @@ const Upload = () => {
         formDataToSend.append("full_name", formDataFromHome.fullName);
         formDataToSend.append("university", formDataFromHome.university);
         formDataToSend.append("department", formDataFromHome.department);
-        formDataToSend.append("machine_used", formDataFromHome.machineUsed);
-        formDataToSend.append("model_number", formDataFromHome.modelNumber);
+        // formDataToSend.append("machine_used", formDataFromHome.machineUsed);
+        // formDataToSend.append("model_number", formDataFromHome.modelNumber);
+        formDataToSend.append("make_and_model_of_machine", formDataFromHome.makeAndModelOfMachine);
         formDataToSend.append("email_address", formDataFromHome.emailAddress);
 
         try {

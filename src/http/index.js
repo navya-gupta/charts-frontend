@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: process.env.NODE_ENV === 'production' ? 'http://sim-hub.poly.edu:8001' : 'http://localhost:8000',
     withCredentials: true
 });
 
